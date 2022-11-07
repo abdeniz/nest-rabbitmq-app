@@ -7,7 +7,7 @@
 dist.do
 node_modules
 
-# Environemnt (contains sensitive data)
+# Environment (contains sensitive data)
 *.env
 
 # Misc

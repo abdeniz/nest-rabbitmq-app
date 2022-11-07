@@ -63,7 +63,7 @@ services:
       - '5672:5672'
 
   mongodb-primary:
-    image: ghcr.io/zcube/bitnami-compat/mongodb:5.0
+    image: docker.io/bitnami/mongodb:5.0
     environment:
       - MONGODB_ADVERTISED_HOSTNAME=mongodb-primary
       - MONGODB_REPLICA_SET_MODE=primary
@@ -75,7 +75,7 @@ services:
       - '27017:27017'
 
   mongodb-secondary:
-    image: ghcr.io/zcube/bitnami-compat/mongodb:5.0
+    image: docker.io/bitnami/mongodb:5.0
     depends_on:
       - mongodb-primary
     environment:
@@ -86,7 +86,7 @@ services:
       - MONGODB_REPLICA_SET_KEY=replicasetkey123
 
   mongodb-arbiter:
-    image: ghcr.io/zcube/bitnami-compat/mongodb:5.0
+    image: docker.io/bitnami/mongodb:5.0
     depends_on:
       - mongodb-primary
     environment:
